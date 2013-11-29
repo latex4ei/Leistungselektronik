@@ -1,4 +1,5 @@
-	% .:: Laden der LaTeX4EI Formelsammlungsvorlage
+	
+% .:: Laden der LaTeX4EI Formelsammlungsvorlage
 \documentclass[fs, footer]{latex4ei}
 
 % Dokumentbeginn
@@ -15,6 +16,11 @@
 % | 		Leistungselektronik			    |
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \fstitle{Leistungselektronik}
+
+\textbf{Hinweis: } Bei der Prüfung \emph{Leistungselektronik} ist derzeit keine Formelsammlung zugelassen. Daher kann diese Sammlung wichtiger Formeln und Schaltungen lediglich als Hilfe bei der Prüfungsvorbereitung dienen. \\ 
+
+\textbf{Bilder:} 
+Viele Bilder dieser Formelsammlung stammen aus dem Übungsskript zum Fach Leistungselektronik: Grundlagen und Standartanwendungen. Bei diesen Bildern liegt das Copyright beim Lehrstuhl für Elektrische Antriebssysteme und Leistungselektronik - TU München
 
 \section*{Allgemeines}
 
@@ -162,10 +168,22 @@ Unten: Es leitet immer die Diode mit dem niedrigsten Potential.
 	\includegraphics[width=5cm]{img/B6-Schaltung.pdf}
 	\includegraphics[width=6cm]{img/03-B6-Spannungsverlauf.pdf}
 	
-	$U_{\ir dia} = \frac{p}{2 \pi} \int \limits_{\frac{- \pi}{p} + a}^{\frac{\pi}{p} + a} \hat{U} \cos(\omega t) \diff \omega t = U_{\ir dia} \cos \alpha$
-	
-	!!!! Überprüfen
+	$U_{\ir{di} \alpha} = 2 \frac{1}{2 \pi} \int \limits_\alpha^\pi \hat U \sin (\omega t) \diff \omega t = \ldots = U_{\ir{di}0} \frac{1 + \cos \alpha}{2}$
 }
+
+\section{Schutzbeschaltung}
+
+\sectionbox{
+	\subsection{Snubber-Schaltung}
+
+	\includegraphics[width=5cm]{img/04-Snubber.pdf}
+
+	Die Kombination aus der dem $RC$-Glied mit zum Wiederstand paralell geschalteter Diode nennt man \emph{Snubber} Schaltung. 
+} 
+
+\section{Schaltnetzteile}
+
+Ausgangsspannung: $U_A = U_0 \frac{t_{\ir on}}{t_{\ir on} + t_{\ir off}}$
 
 \section{DC-DC-Converters}
 \sectionbox{
@@ -179,18 +197,21 @@ Unten: Es leitet immer die Diode mit dem niedrigsten Potential.
 \includegraphics[width=5cm]{img/04-Hochsetzsteller.pdf}
 }
 
-\tiny{Bilder aus dem Übungsskript zum Fach Leistungselektronik: Grundlagen und Standartanwendungen
-\copyright  Lehrstuhl für Elektrische Antriebssysteme und Leistungselektronik - TU München}
 
 
 
-\section{Verluste}
+\section{Verlustleistung und Kühlung}
 \sectionbox{
 	\subsection{Durchlassverluste} 
 
 	zeitlicher Mittelwert: $I_{\ir AV} = \frac 1 T \int \limits_0^T i \diff t$
 
 	Effektivwert: $I_{\ir RMS} = \sqrt{\frac 1 T \int \limits_0^T i^2 \diff t}$
+
+	$p_D = u i = U_S i + r_D i^2$
+
+	$P_D = \frac{1}{D} \int_0^T p_D \diff t = U_S \frac{1}{T} \int_0^T i \diff t + r_D \frac{1}{T} \int_0^T i^2 \diff t $
+
 }
 \sectionbox{
 	\subsection{Sperrverluste}
@@ -239,12 +260,12 @@ $R_{\ir th} = \frac{d}{\lambda A}$
 }
 $P = C_{\ir th} \frac{\diff \theta}{\diff t} = C_{\ir th} \theta$
 
-$C_{\ir th} = V \gamma_C$
+%$C_{\ir th} = V \gamma_C$
 }
 
 \sectionbox{
 	\subsection{Transiente Wärmewiderstände}
-
+		$Z_{\ir thi} (t) = R_{\ir thi} \left( 1 - e^{\frac{-t}{\tau_{\ir thi}}} \right)$
 }
 % Ende der Spalten
 \end{multicols*}
